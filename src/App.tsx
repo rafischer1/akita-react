@@ -10,10 +10,10 @@ function App(): any {
     <div>
         <Header />
         <div className="App">
-          <Form />
-          <Hi />
+          {/*<Form />*/}
+          {/*<Hi />*/}
+          <MadLibContainer />
         </div>
-        <MadLibContainer />
     </div>
   );
 }

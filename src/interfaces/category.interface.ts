@@ -12,4 +12,5 @@ export const categories: Category[] = [
     {id: 6, title: "War"},
     {id: 7, title: "Ancient"},
     {id: 7, title: "Modern"},
+    {id: 8, title: "Space"}
 ];

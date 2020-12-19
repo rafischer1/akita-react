@@ -7,7 +7,7 @@ import { SessionState } from "../../interfaces/session-state.interface";
 export class Form extends React.Component<Record<string, never>, SessionState> {
     constructor(props: any) {
         super(props);
-        this.state = {name: "", city: "", state: ""};
+        this.state = {name:"", city: "", state: ""};
 
         this.handleNameChange = this.handleNameChange.bind(this);
         this.handleCityChange = this.handleCityChange.bind(this);

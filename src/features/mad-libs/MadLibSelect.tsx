@@ -1,23 +1,29 @@
 import React from "react";
-import { HistoryMadLib } from "../../interfaces/history-mad-libs.interface";
-import { sessionStore } from "../../stores/session-state/session-state.store";
+import {  historyMadLibs } from "../../interfaces/history-mad-libs.interface";
 import { setActive } from "../../stores/active-mad-lib/active-mad-lib.service";
 
-export class MadLibSelect extends React.Component<Record<string, never>, HistoryMadLib> {
+export class MadLibSelect extends React.Component<Record<string, never>, number> {
     constructor(props: any) {
         super(props);
-        this.state = { categories: [], id: 0, title: "" };
         this.handleStateChange = this.handleStateChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleStateChange(event: any): any {
         const { value }: any = event.target;
-        this.setState({ ...value });
+        setActive(+value);
+        event.preventDefault();
     }
 
-    handleSubmit(event: any): any {
-        setActive({...this.state});
-        event.preventDefault();
+
+    render() {
+        return (
+            <label>Select Title:
+                <select onChange={this.handleStateChange}>
+                    <option>Select ad-lib...</option>
+                    {historyMadLibs.map((madlib, i )=>
+                        <option key={i} value={madlib.id}>{madlib.title}</option>)}
+                </select>
+            </label>
+        );
     }
 }
