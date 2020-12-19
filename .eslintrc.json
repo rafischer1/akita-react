@@ -21,6 +21,7 @@
     "quotes": ["error", "double"],
     "consistent-return": "off",
     "no-useless-return": "error",
-    "no-unused-vars": "off"
+    "no-unused-vars": "off",
+    "no-duplicate-imports": "off"
   }
 }

@@ -1,4 +1,4 @@
-import { createEntityQuery, Query } from "@datorama/akita";
+import { createEntityQuery } from "@datorama/akita";
 import { sessionStore } from "./session-state.store";
 import { SessionState } from "../../interfaces/session-state.interface";
 
