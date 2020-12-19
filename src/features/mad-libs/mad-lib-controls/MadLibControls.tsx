@@ -13,7 +13,7 @@ export class MadLibControls extends React.Component<Record<string, never>, { con
     componentDidMount() {
         getActiveMadLib$.subscribe(active => {
             this.setState({ controls: active.controls });
-        }).unsubscribe();
+        });
     }
 
 
