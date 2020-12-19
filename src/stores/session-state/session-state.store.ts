@@ -1,26 +1,19 @@
-import {Store, StoreConfig} from "@datorama/akita";
+import { createEntityStore, Store, StoreConfig } from "@datorama/akita";
 
 export interface SessionState {
-    token: string;
-    name: string;
+  name: string;
+  city: string;
+  state: string;
 }
 
 export function createInitialState(): SessionState {
-    return {
-        token: '',
-        name: ''
-    };
+  return {
+    name: "",
+    city: "",
+    state: "",
+  };
 }
 
-@StoreConfig({ name: 'session' })
-export class SessionStore extends Store<SessionState> {
-    constructor() {
-        super(createInitialState());
-    }
+export const sessionStore = createEntityStore<SessionState>(createInitialState(), {name: "session"});
 
- updateName(newName: string) {
-        return this.update((_) => {
-            return {name: newName}
-        })
- }
-}
+
