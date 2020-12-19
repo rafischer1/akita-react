@@ -19,7 +19,7 @@ export class Hi extends React.Component<Record<string, never>, { value: SessionS
     return (
         <div>
           <div>
-            <h1>Hi Component Works</h1>
+            <h1>Form Query</h1>
             <h3>{ this.state.value.name }</h3>
               <h3>{ this.state.value.city }</h3>
               <h3>{ this.state.value.state }</h3>

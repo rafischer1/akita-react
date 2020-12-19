@@ -1,5 +1,7 @@
 import React from "react";
 import { sessionStore } from "../../stores/session-state/session-state.store";
+import "./Form.css";
+import { usStates } from "../../interfaces/us-states";
 
 export class Form extends React.Component<Record<string, never>, { name: string, city: string, state: string }> {
     constructor(props: any) {
@@ -14,31 +16,29 @@ export class Form extends React.Component<Record<string, never>, { name: string,
 
     handleNameChange(event: any): any {
         const { value }: any = event.target;
-        console.log("state value:", value);
         this.setState({name: value});
     }
 
     handleCityChange(event: any): any {
         const { value }: any = event.target;
-        console.log("state value:", value);
         this.setState({city: value});
     }
 
     handleStateChange(event: any): any {
         const { value }: any = event.target;
-        console.log("state value:", value);
         this.setState({state: value});
     }
 
     handleSubmit(event: any): any {
         sessionStore.update((_) => {
-            return {name: this.state.name, state: this.state.state, city: this.state.city};
+            return { name: this.state.name, state: this.state.state, city: this.state.city };
         });
         event.preventDefault();
     }
+
     render() {
         return (
-            <div>
+            <div className="session-container">
                 <form onSubmit={this.handleSubmit} className="session-form">
                     <label>Name:
                         <input type="text" value={this.state.name} onChange={this.handleNameChange} />
@@ -47,11 +47,16 @@ export class Form extends React.Component<Record<string, never>, { name: string,
                         <input type="text" value={this.state.city} onChange={this.handleCityChange} />
                     </label>
                     <label>State:
-                        <input type="text" value={this.state.state} onChange={this.handleStateChange} />
+                        <select value={this.state.state} onChange={this.handleStateChange}>
+                            <option>Select state...</option>
+                           {usStates.map((s, i )=> <option key={i} value={s.abbr}>{s.name}</option>)}
+                        </select>
                     </label>
-                <input type="submit" value="Submit" />
+                    <input type="submit" className="btn" value="Submit" />
                 </form>
             </div>
         );
     }
 }
+
+
