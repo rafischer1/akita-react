@@ -2,6 +2,7 @@ import React from "react";
 import { MadLibSelect } from "../MadLibSelect";
 import { MadLibControls } from "../mad-lib-controls/MadLibControls";
 import { ViewMadLib } from "../ViewMadLib";
+import { MadLibTemplate } from "../mad-lib-template/MadLibTemplate";
 
 const madLibBody = {
     display: "flex",
@@ -13,7 +14,7 @@ export const MadLibContainer = () => {
         <MadLibSelect />
         <div style={madLibBody}>
           <MadLibControls />
-          <ViewMadLib />
+          <MadLibTemplate />
         </div>
     </div>;
 };

@@ -6,7 +6,8 @@ export function createInitialState(): HistoryMadLib {
         categories: [],
         id: 0,
         title: "",
-        controls: []
+        controls: [],
+        template: []
     };
 }
 
