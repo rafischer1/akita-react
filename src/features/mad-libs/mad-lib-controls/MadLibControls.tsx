@@ -20,23 +20,27 @@ export class MadLibControls extends React.Component<Record<string, never>, { con
 
     updateResponse(event: any, c: MadLibControl): any {
         if (event) {
-            updateMadLibResponse({ controlId: c.id, value: event.target.value });
+            const val = event?.target?.value;
+            console.log("value???", val, event);
+            updateMadLibResponse({ controlId: c.id, value: val ? val : "No Value Set" });
         }
     }
 
 
     render() {
-        return <div className="controls-display">{this.state.controls?.map((c, i) => {
+        return<div>
+            <div className="controls-display">{this.state.controls?.map((c, i) => {
             if (c.type === "select") {
-                return <label key={i}>{c.label}:<select onChange={this.updateResponse(Event, c)}>
+                return <label key={i}>{c.label}:<select onChange={(e) => this.updateResponse(e, c)}>
                     <option>Select option...</option>
                     {c?.valueSet?.map((v, x) =>
                         <option key={x}>{v}</option> )}</select></label>;
             } else {
-                return <label key={i}>{c.label}<input  type={c.type} onChange={this.updateResponse(Event, c)}/></label>;
+                return <label key={i}>{c.label}:<input  type={c.type}  onChange={(e) => this.updateResponse(e, c)}/></label>;
             }
 
-        })}</div>;
+            })}</div>
+        </div>;
     }
 
 }

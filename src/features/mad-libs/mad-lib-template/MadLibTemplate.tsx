@@ -1,6 +1,6 @@
 import React from "react";
 import { getActiveMadLib$ } from "../../../stores/active-mad-lib/active-mad-lib.query";
-import { HistoryMadLib } from "../../../interfaces/history-mad-libs.interface";
+import { HistoryMadLib, TemplateElement } from "../../../interfaces/history-mad-libs.interface";
 import { getResponseByControlId$ } from "../../../stores/mad-lib-responses/mad-lib-responses.query";
 
 export class MadLibTemplate extends React.Component<Record<string, never>, { madLib: HistoryMadLib}> {
@@ -15,8 +15,13 @@ export class MadLibTemplate extends React.Component<Record<string, never>, { mad
         });
     }
 
-    getResponseByControlId(id: number) {
-        return getResponseByControlId$(id).subscribe(res =>  res);
+   getResponseByControlId(id: number): string {
+        let tmp = "";
+       getResponseByControlId$(id).subscribe(res => {
+            console.log("res on subscribe:", res);
+            tmp = res || "No Val Yet";
+        });
+        return tmp;
     }
 
     componentWillUnmount() {
@@ -24,9 +29,10 @@ export class MadLibTemplate extends React.Component<Record<string, never>, { mad
 
 
     render() {
-        return <div>{this.state.madLib.template.map((el, i) => {
-            return React.createElement(el.tag, {className: el.className || null, key: i},
-                el.controlId ? this.getResponseByControlId(el.controlId) : el.text);
+        return <div>{this.state?.madLib?.template?.map((el, i) => {
+            return <div key={i} className={el.className || undefined}>
+                {el.controlId ? this.getResponseByControlId(el.controlId) : el.text}
+            </div>;
         })}</div>;
     }
 

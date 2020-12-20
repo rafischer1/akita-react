@@ -4,13 +4,21 @@ import { madLibResponsesStore } from "./mad-lib-responses.store";
 export const updateMadLibResponse = (newResponse: MadLibResponse) => {
     console.log("ADD THIS RESPONSE:", newResponse);
     madLibResponsesStore.update(old => {
-        return old.responses.forEach(oldResponse => {
-            if (oldResponse.controlId === newResponse.controlId) {
-                const index = old.responses.indexOf(oldResponse);
-                old.responses[index] = newResponse;
-            } else {
-                old.responses.push(newResponse);
-            }
-        });
+        const newResponses = [...old.responses];
+        if (old.responses.length === 0) {
+           newResponses.push(newResponse);
+        } else {
+            newResponses.forEach(response => {
+                if (response.controlId === newResponse.controlId) {
+                    const index = newResponses.indexOf(response);
+                    newResponses.splice(index, 1, newResponse);
+                } else {
+                    newResponses.push(newResponse);
+                }
+            });
+        }
+        return {responses:[...newResponses]};
     });
 };
+
+export const resetResponses = () => madLibResponsesStore.reset();

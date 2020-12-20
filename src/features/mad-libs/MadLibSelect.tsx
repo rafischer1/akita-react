@@ -1,6 +1,7 @@
 import React from "react";
 import {  historyMadLibs } from "../../interfaces/history-mad-libs.interface";
-import { setActive } from "../../stores/active-mad-lib/active-mad-lib.service";
+import { deleteActive, setActive } from "../../stores/active-mad-lib/active-mad-lib.service";
+import { resetResponses } from "../../stores/mad-lib-responses/mad-lib-response.service";
 
 export class MadLibSelect extends React.Component<Record<string, never>, number> {
     constructor(props: any) {
@@ -10,6 +11,8 @@ export class MadLibSelect extends React.Component<Record<string, never>, number>
 
     handleStateChange(event: any): any {
         const { value }: any = event.target;
+        deleteActive();
+        resetResponses();
         setActive(+value);
         event.preventDefault();
     }

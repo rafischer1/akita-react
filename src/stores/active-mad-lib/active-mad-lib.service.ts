@@ -14,5 +14,5 @@ export const setActive = (id: number) => {
 };
 
 export const deleteActive = () => {
-     activeMadLibStore.destroy();
+     activeMadLibStore.reset();
 };
