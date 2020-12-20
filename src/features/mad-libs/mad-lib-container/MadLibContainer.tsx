@@ -1,12 +1,12 @@
 import React from "react";
 import { MadLibSelect } from "../MadLibSelect";
 import { MadLibControls } from "../mad-lib-controls/MadLibControls";
-import { ViewMadLib } from "../ViewMadLib";
 import { MadLibTemplate } from "../mad-lib-template/MadLibTemplate";
 
 const madLibBody = {
     display: "flex",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    marginTop: "5px"
 };
 
 export const MadLibContainer = () => {

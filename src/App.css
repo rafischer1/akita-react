@@ -6,3 +6,8 @@
     width: 100%;
     top: 60px;
 }
+
+select {
+    cursor: pointer;
+    margin-left: 5px;
+}
