@@ -1,8 +1,7 @@
 import React from "react";
 import { getActiveMadLib$ } from "../../../stores/active-mad-lib/active-mad-lib.query";
 import { HistoryMadLib } from "../../../interfaces/history-mad-libs.interface";
-import { getResponseByControlId$ } from "../../../stores/mad-lib-responses/mad-lib-responses.query";
-import { ViewResponse } from "../ViewResponse";
+import { ViewResponse } from "../view-response/ViewResponse";
 
 export class MadLibTemplate extends React.Component<
   Record<string, never>,
@@ -19,11 +18,6 @@ export class MadLibTemplate extends React.Component<
   componentDidMount() {
     getActiveMadLib$.subscribe((active) => {
       this.setState({ madLib: active });
-    });
-
-    getResponseByControlId$("ws1").subscribe((res) => {
-      console.log("res on subscribe:", res);
-      this.setState({ value: res || "" });
     });
   }
 
