@@ -30,7 +30,13 @@ export class MadLibTemplate extends React.Component<
           if (el.text) {
             return <TextTemplate template={el} key={i} />;
           }
-          return <ControlTemplate controlId={el.controlId} key={i} />;
+          return (
+            <ControlTemplate
+              controlId={el.controlId}
+              className={el.className}
+              key={i}
+            />
+          );
         })}
       </div>
     );

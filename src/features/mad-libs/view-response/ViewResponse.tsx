@@ -15,7 +15,7 @@ export const TextTemplate = (props: { template: TemplateElement }) => {
 };
 
 export class ControlTemplate extends React.Component<
-  { controlId: string | undefined },
+  { controlId: string | undefined; className: string },
   { response: string }
 > {
   constructor(props: { controlId: string | undefined }) {
@@ -34,6 +34,6 @@ export class ControlTemplate extends React.Component<
   componentWillUnmount() {}
 
   render() {
-    return <div>{this.state.response}</div>;
+    return <div className={this.props.className}>{this.state.response}</div>;
   }
 }
