@@ -1,4 +1,3 @@
-import { HistoryMadLib } from "../../interfaces/history-mad-libs.interface";
 import { MadLibResponse } from "../../interfaces/mad-lib-response.interface";
 import { createEntityStore } from "@datorama/akita";
 

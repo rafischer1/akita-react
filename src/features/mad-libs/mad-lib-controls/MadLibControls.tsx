@@ -21,8 +21,7 @@ export class MadLibControls extends React.Component<Record<string, never>, { con
     updateResponse(event: any, c: MadLibControl): any {
         if (event) {
             const val = event?.target?.value;
-            console.log("value???", val, event);
-            updateMadLibResponse({ controlId: c.id, value: val ? val : "No Value Set" });
+            updateMadLibResponse({ controlId: c.id, value: val ? val : "" });
         }
     }
 
@@ -36,9 +35,10 @@ export class MadLibControls extends React.Component<Record<string, never>, { con
                     {c?.valueSet?.map((v, x) =>
                         <option key={x}>{v}</option> )}</select></label>;
             } else {
-                return <label key={i}>{c.label}:<input  type={c.type}  onChange={(e) => this.updateResponse(e, c)}/></label>;
+                return <label key={i}>{c.label}:
+                    <input  type={c.type} onChange={(e) => this.updateResponse(e, c)}/>
+                </label>;
             }
-
             })}</div>
         </div>;
     }

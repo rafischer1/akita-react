@@ -1,4 +1,4 @@
 export interface MadLibResponse {
-    controlId: number;
+    controlId: string;
     value: string;
 }
