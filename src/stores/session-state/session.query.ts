@@ -1,5 +1,6 @@
-import { createEntityQuery, Query } from "@datorama/akita";
-import { SessionState, sessionStore } from "./session-state.store";
+import { createEntityQuery } from "@datorama/akita";
+import { sessionStore } from "./session-state.store";
+import { SessionState } from "../../interfaces/session-state.interface";
 
 export const sessionQuery = createEntityQuery<SessionState>(sessionStore);
 

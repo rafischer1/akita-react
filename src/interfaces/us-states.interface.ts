@@ -3,7 +3,7 @@ export interface UsState {
     abbr: string;
 }
 
-export const usStates: UsState[] = [
+export const usStatesInterface: UsState[] = [
     {name:"Alabama", abbr:"AL"},
     {name:"Alaska",  abbr:"AK"},
     {name:"Arizona", abbr:"AZ"},

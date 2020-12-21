@@ -1,12 +1,13 @@
 import React from "react";
 import { sessionStore } from "../../stores/session-state/session-state.store";
 import "./Form.css";
-import { usStates } from "../../interfaces/us-states";
+import { usStatesInterface } from "../../interfaces/us-states.interface";
+import { SessionState } from "../../interfaces/session-state.interface";
 
-export class Form extends React.Component<Record<string, never>, { name: string, city: string, state: string }> {
+export class Form extends React.Component<Record<string, never>, SessionState> {
     constructor(props: any) {
         super(props);
-        this.state = {name: "", city: "", state: ""};
+        this.state = {name:"", city: "", state: ""};
 
         this.handleNameChange = this.handleNameChange.bind(this);
         this.handleCityChange = this.handleCityChange.bind(this);
@@ -49,7 +50,7 @@ export class Form extends React.Component<Record<string, never>, { name: string,
                     <label>State:
                         <select value={this.state.state} onChange={this.handleStateChange}>
                             <option>Select state...</option>
-                           {usStates.map((s, i )=> <option key={i} value={s.abbr}>{s.name}</option>)}
+                           {usStatesInterface.map((s, i )=> <option key={i} value={s.abbr}>{s.name}</option>)}
                         </select>
                     </label>
                     <input type="submit" className="btn" value="Submit" />

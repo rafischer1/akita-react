@@ -7,7 +7,7 @@ export const Header = () => {
             <div className="menu-item">
                 <div className="menu-text">Menu</div>
             </div>
-            <div><h2>🐕 Akita | React 🐕</h2></div>
+            <div><h2>🐕 Akita | React History *Ad*-Libs 🐕</h2></div>
             <div className="menu-item">
                 <div className="menu-text">Home</div>
             </div>
