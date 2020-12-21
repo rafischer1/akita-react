@@ -3,7 +3,6 @@ import { madLibResponsesStore } from "./mad-lib-responses.store";
 
 export const updateMadLibResponse = (newResponse: MadLibResponse) => {
   madLibResponsesStore.update((state) => {
-    console.log("responses:", state.responses);
     const old = [...state.responses];
     const found = old.find((r) => r.controlId === newResponse.controlId);
     if (found) {

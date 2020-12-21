@@ -14,6 +14,7 @@ export class MadLibControls extends React.Component<
     this.state = { controls: [] };
     this.updateResponse = this.updateResponse.bind(this);
   }
+
   componentDidMount() {
     getActiveMadLib$.subscribe((active) => {
       this.setState({ controls: active.controls });

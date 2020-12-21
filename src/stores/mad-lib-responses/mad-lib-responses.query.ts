@@ -17,4 +17,8 @@ export const getResponseByControlId$ = (id: string): Observable<string> =>
     return val ? (val.value ? val.value : "") : "";
   });
 
+export const getAllResponses$ = madLibResponsesQuery.select(
+  (state) => state.responses
+);
+
 export const loading$: Observable<boolean> = madLibResponsesQuery.selectLoading();
