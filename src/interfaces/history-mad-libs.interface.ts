@@ -26,8 +26,19 @@ export const historyMadLibs: HistoryMadLib[] = [
     title: "William Shakespeare",
     categories: [1, 5],
     template: [
-      { tag: "div", className: "", text: "This author's name is:" },
-      { tag: "div", className: "", controlId: "ws1" },
+      { tag: "div", className: "response", controlId: "ws1" },
+      {
+        tag: "span",
+        className: "",
+        text: "was a playwright and poet in Southern ",
+      },
+      { tag: "span", className: "response", controlId: "ws2" },
+      {
+        tag: "span",
+        className: "",
+        text: "in the ",
+      },
+      { tag: "span", className: "response", controlId: "ws3" },
     ],
     controls: [
       { id: "ws1", type: "text", label: "Name" },
@@ -35,8 +46,9 @@ export const historyMadLibs: HistoryMadLib[] = [
         id: "ws2",
         label: "Location",
         type: "select",
-        valueSet: ["England", "Scotland", "Antarctica"],
+        valueSet: ["England", "Scotland", "Antarctica", "Botswana"],
       },
+      { id: "ws3", type: "text", label: "Number" },
     ],
   },
   {

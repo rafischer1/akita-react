@@ -1,8 +1,7 @@
 import React from "react";
 import { getActiveMadLib$ } from "../../../stores/active-mad-lib/active-mad-lib.query";
 import { HistoryMadLib } from "../../../interfaces/history-mad-libs.interface";
-import { getResponseByControlId$ } from "../../../stores/mad-lib-responses/mad-lib-responses.query";
-import { ViewResponse } from "../ViewResponse";
+import { ControlTemplate, TextTemplate } from "../view-response/ViewResponse";
 
 export class MadLibTemplate extends React.Component<
   Record<string, never>,
@@ -20,11 +19,6 @@ export class MadLibTemplate extends React.Component<
     getActiveMadLib$.subscribe((active) => {
       this.setState({ madLib: active });
     });
-
-    getResponseByControlId$("ws1").subscribe((res) => {
-      console.log("res on subscribe:", res);
-      this.setState({ value: res || "" });
-    });
   }
 
   componentWillUnmount() {}
@@ -33,7 +27,16 @@ export class MadLibTemplate extends React.Component<
     return (
       <div>
         {this.state?.madLib?.template?.map((el, i) => {
-          return <ViewResponse key={i} template={el} />;
+          if (el.text) {
+            return <TextTemplate template={el} key={i} />;
+          }
+          return (
+            <ControlTemplate
+              controlId={el.controlId}
+              className={el.className}
+              key={i}
+            />
+          );
         })}
       </div>
     );
