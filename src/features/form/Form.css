@@ -1,43 +1,41 @@
 div.session-container {
-    border: 1px solid #333;
-    border-radius: 5px;
-    width: 25%;
-    padding: 2%;
-
+  border: 1px solid #333;
+  border-radius: 5px;
+  width: 25%;
+  padding: 2%;
 }
 
 form.session-form {
-    display: block;
-    padding: 2%;
-    text-align: left;
+  display: block;
+  padding: 2%;
+  text-align: left;
 }
 
 label {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin: 2% auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 2% auto;
 }
 
 input {
-    margin-left: 5px;
-    width: 200px;
+  margin-left: 5px;
+  width: 200px;
 }
 
-
 input.btn {
-    background: #333;
-    color: white;
-    cursor: pointer;
-    width: 100px;
-    border-radius: 5px;
-    float: right;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  width: 100px;
+  border-radius: 5px;
+  float: right;
 }
 
 input.btn:hover {
-    background: #393939;
+  background: #393939;
 }
 
 input.btn:active {
-    background: #2d2d2d;
+  background: #2d2d2d;
 }

@@ -2,11 +2,14 @@ import { MadLibResponse } from "../../interfaces/mad-lib-response.interface";
 import { createEntityStore } from "@datorama/akita";
 
 export interface MadLibResponsesState {
-    responses: MadLibResponse[]
+  responses: MadLibResponse[];
 }
 
 export function createInitialState(): MadLibResponsesState {
-    return { responses: [] };
+  return { responses: [] };
 }
 
-export const madLibResponsesStore = createEntityStore<MadLibResponsesState>(createInitialState(), {name: "madLibResponses"});
+export const madLibResponsesStore = createEntityStore<MadLibResponsesState>(
+  createInitialState(),
+  { name: "madLibResponses" }
+);
