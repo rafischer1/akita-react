@@ -1,6 +1,6 @@
 import React from "react";
-import { sessionQuerySelectForm$ } from "../../stores/session-state/session.query";
-import { SessionState } from "../../interfaces/session-state.interface";
+import { sessionQuerySelectForm$ } from "../state/session-state/session.query";
+import { SessionState } from "../../../interfaces/session-state.interface";
 
 export class Hi extends React.Component<
   Record<string, never>,

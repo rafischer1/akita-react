@@ -1,5 +1,5 @@
 import { createEntityStore } from "@datorama/akita";
-import { SessionState } from "../../interfaces/session-state.interface";
+import { SessionState } from "../../../../interfaces/session-state.interface";
 
 export function createInitialState(): SessionState {
   return {

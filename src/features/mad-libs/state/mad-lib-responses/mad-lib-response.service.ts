@@ -1,4 +1,4 @@
-import { MadLibResponse } from "../../interfaces/mad-lib-response.interface";
+import { MadLibResponse } from "../../../../interfaces/mad-lib-response.interface";
 import { madLibResponsesStore } from "./mad-lib-responses.store";
 
 export const updateMadLibResponse = (newResponse: MadLibResponse) => {

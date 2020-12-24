@@ -1,6 +1,6 @@
 import React from "react";
-import { getActiveMadLib$ } from "../../../stores/active-mad-lib/active-mad-lib.query";
-import { HistoryMadLib } from "../../../interfaces/history-mad-libs.interface";
+import { getActiveMadLib$ } from "../../state/active-mad-lib/active-mad-lib.query";
+import { HistoryMadLib } from "../../../../interfaces/history-mad-libs.interface";
 import { ControlTemplate, TextTemplate } from "../view-response/ViewResponse";
 
 export class MadLibTemplate extends React.Component<

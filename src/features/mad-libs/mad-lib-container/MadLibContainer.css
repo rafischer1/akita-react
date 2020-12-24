@@ -1,0 +1,13 @@
+div.container-div {
+  width: 100%;
+  margin: auto;
+  display: grid;
+}
+
+.mad-lib-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 5px;
+  width: 100%;
+}

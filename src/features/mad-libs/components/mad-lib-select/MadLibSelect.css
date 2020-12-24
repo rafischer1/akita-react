@@ -1,0 +1,11 @@
+label.select-container {
+  margin: auto auto;
+  font-weight: 500;
+}
+
+select {
+  cursor: pointer;
+  margin-left: 5px;
+  height: 30px;
+  vertical-align: baseline;
+}

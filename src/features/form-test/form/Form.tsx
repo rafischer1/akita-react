@@ -1,8 +1,8 @@
 import React from "react";
-import { sessionStore } from "../../stores/session-state/session-state.store";
+import { sessionStore } from "../state/session-state/session-state.store";
 import "./Form.css";
-import { usStatesInterface } from "../../interfaces/us-states.interface";
-import { SessionState } from "../../interfaces/session-state.interface";
+import { usStatesInterface } from "../../../interfaces/us-states.interface";
+import { SessionState } from "../../../interfaces/session-state.interface";
 
 export class Form extends React.Component<Record<string, never>, SessionState> {
   constructor(props: any) {

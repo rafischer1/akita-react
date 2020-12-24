@@ -1,19 +1,14 @@
 import React from "react";
-import { MadLibSelect } from "../MadLibSelect";
-import { MadLibControls } from "../mad-lib-controls/MadLibControls";
-import { MadLibTemplate } from "../mad-lib-template/MadLibTemplate";
-
-const madLibBody = {
-  display: "flex",
-  justifyContent: "space-between",
-  marginTop: "5px",
-};
+import { MadLibSelect } from "../components/mad-lib-select/MadLibSelect";
+import { MadLibControls } from "../components/mad-lib-controls/MadLibControls";
+import { MadLibTemplate } from "../components/mad-lib-template/MadLibTemplate";
+import "./MadLibContainer.css";
 
 export const MadLibContainer = () => {
   return (
-    <div>
+    <div className="container-div">
       <MadLibSelect />
-      <div style={madLibBody}>
+      <div className="mad-lib-body">
         <MadLibControls />
         <MadLibTemplate />
       </div>
