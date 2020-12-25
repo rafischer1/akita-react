@@ -16,6 +16,15 @@
   border-bottom: 1px solid lightgray;
 }
 
+h2 {
+  background: #4bb591;
+  color: #333;
+  min-height: 51px;
+  margin-top: 22px;
+  text-decoration: underline;
+  border-bottom: 1px solid lightgray;
+}
+
 div.menu-item {
   background: #333;
   margin: auto 5px;
