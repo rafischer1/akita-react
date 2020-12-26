@@ -11,5 +11,5 @@ export function createInitialState(): MadLibResponsesState {
 
 export const madLibResponsesStore = createEntityStore<MadLibResponsesState>(
   createInitialState(),
-  { name: "madLibResponses" }
+  { name: "madLibResponses", resettable: true }
 );
