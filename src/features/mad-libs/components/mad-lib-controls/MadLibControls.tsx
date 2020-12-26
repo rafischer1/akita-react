@@ -1,18 +1,22 @@
 import React from "react";
-import { getActiveMadLib$ } from "../../../stores/active-mad-lib/active-mad-lib.query";
-import { MadLibControl } from "../../../interfaces/history-mad-libs.interface";
+import { getActiveMadLib$ } from "../../state/active-mad-lib/active-mad-lib.query";
+import { MadLibControl } from "../../../../interfaces/history-mad-libs.interface";
 import "./MadLibControls.css";
-import { updateMadLibResponse } from "../../../stores/mad-lib-responses/mad-lib-response.service";
+import {
+  resetResponses,
+  updateMadLibResponse,
+} from "../../state/mad-lib-responses/mad-lib-response.service";
 
 export class MadLibControls extends React.Component<
   Record<string, never>,
-  { controls: MadLibControl[] }
+  { controls: MadLibControl[]; value: any }
 > {
   constructor(props: {} | MadLibControl[]) {
     // @ts-ignore
     super(props);
-    this.state = { controls: [] };
+    this.state = { controls: [], value: "" };
     this.updateResponse = this.updateResponse.bind(this);
+    this.clearResponses = this.clearResponses.bind(this);
   }
 
   componentDidMount() {
@@ -21,10 +25,13 @@ export class MadLibControls extends React.Component<
     });
   }
 
+  clearResponses = () => resetResponses();
+
   updateResponse(event: any, c: MadLibControl): any {
     if (event) {
       const val = event?.target?.value;
       updateMadLibResponse({ controlId: c.id, value: val ? val : "" });
+      this.setState({ value: val });
     }
   }
 
@@ -58,6 +65,7 @@ export class MadLibControls extends React.Component<
             }
           })}
         </div>
+        <button onClick={this.clearResponses}>Clear Responses</button>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import { createEntityStore } from "@datorama/akita";
-import { HistoryMadLib } from "../../interfaces/history-mad-libs.interface";
+import { HistoryMadLib } from "../../../../interfaces/history-mad-libs.interface";
 
 export function createInitialState(): HistoryMadLib {
   return {

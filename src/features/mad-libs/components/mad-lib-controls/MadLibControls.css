@@ -1,0 +1,19 @@
+.controls-display {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #333;
+  color: white;
+  padding: 10%;
+}
+
+select,
+input {
+  margin: 5px 5px;
+  width: 200px;
+  background: #fff5e4;
+  color: black;
+  height: 30px;
+  text-align: center;
+  font-size: 16px;
+}

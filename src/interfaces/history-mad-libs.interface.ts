@@ -39,6 +39,29 @@ export const historyMadLibs: HistoryMadLib[] = [
         text: "in the ",
       },
       { tag: "span", className: "response", controlId: "ws3" },
+      {
+        tag: "span",
+        className: "",
+        text: "th/nd Century. \n",
+      },
+      {
+        tag: "span",
+        className: "",
+        text: "Their best works include ",
+      },
+      { tag: "span", className: "response", controlId: "ws4" },
+      {
+        tag: "span",
+        className: "",
+        text: " & ",
+      },
+      { tag: "span", className: "response", controlId: "ws5" },
+      {
+        tag: "span",
+        className: "",
+        text: "as well as Sonnet ",
+      },
+      { tag: "span", className: "response", controlId: "ws6" },
     ],
     controls: [
       { id: "ws1", type: "text", label: "Name" },
@@ -49,6 +72,9 @@ export const historyMadLibs: HistoryMadLib[] = [
         valueSet: ["England", "Scotland", "Antarctica", "Botswana"],
       },
       { id: "ws3", type: "text", label: "Number" },
+      { id: "ws4", type: "text", label: "Name" },
+      { id: "ws5", type: "text", label: "Name" },
+      { id: "ws6", type: "text", label: "Number" },
     ],
   },
   {
@@ -77,3 +103,5 @@ export const historyMadLibs: HistoryMadLib[] = [
     ],
   },
 ];
+
+// todo:: [] extend templates, [] work with classes, [] style controls and templates

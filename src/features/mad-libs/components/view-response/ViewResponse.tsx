@@ -1,10 +1,7 @@
 import React from "react";
-import {
-  HistoryMadLib,
-  TemplateElement,
-} from "../../../interfaces/history-mad-libs.interface";
+import { TemplateElement } from "../../../../interfaces/history-mad-libs.interface";
 import "./ViewResponse.css";
-import { getResponseByControlId$ } from "../../../stores/mad-lib-responses/mad-lib-responses.query";
+import { getResponseByControlId$ } from "../../state/mad-lib-responses/mad-lib-responses.query";
 
 export const TextTemplate = (props: { template: TemplateElement }) => {
   return (

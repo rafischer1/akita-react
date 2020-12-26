@@ -1,4 +1,4 @@
-import { categories } from "../../interfaces/category.interface";
+import { categories } from "../../../../interfaces/category.interface";
 
 export const categoriesServiceCategoryMap = (ids: number[]): string[] => {
   const tmp: string[] = [];

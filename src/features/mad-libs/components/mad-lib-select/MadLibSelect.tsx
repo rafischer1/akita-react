@@ -1,10 +1,11 @@
 import React from "react";
-import { historyMadLibs } from "../../interfaces/history-mad-libs.interface";
+import { historyMadLibs } from "../../../../interfaces/history-mad-libs.interface";
 import {
   deleteActive,
   setActive,
-} from "../../stores/active-mad-lib/active-mad-lib.service";
-import { resetResponses } from "../../stores/mad-lib-responses/mad-lib-response.service";
+} from "../../state/active-mad-lib/active-mad-lib.service";
+import { resetResponses } from "../../state/mad-lib-responses/mad-lib-response.service";
+import "./MadLibSelect.css";
 
 export class MadLibSelect extends React.Component<
   Record<string, never>,
@@ -25,7 +26,7 @@ export class MadLibSelect extends React.Component<
 
   render() {
     return (
-      <label>
+      <label className={"select-container"}>
         Select Title:
         <select onChange={this.handleStateChange}>
           <option>Select ad-lib...</option>

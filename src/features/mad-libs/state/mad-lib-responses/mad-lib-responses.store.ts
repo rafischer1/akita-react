@@ -1,4 +1,4 @@
-import { MadLibResponse } from "../../interfaces/mad-lib-response.interface";
+import { MadLibResponse } from "../../../../interfaces/mad-lib-response.interface";
 import { createEntityStore } from "@datorama/akita";
 
 export interface MadLibResponsesState {
@@ -11,5 +11,5 @@ export function createInitialState(): MadLibResponsesState {
 
 export const madLibResponsesStore = createEntityStore<MadLibResponsesState>(
   createInitialState(),
-  { name: "madLibResponses" }
+  { name: "madLibResponses", resettable: true }
 );
