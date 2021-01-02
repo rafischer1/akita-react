@@ -5,6 +5,7 @@
   background: #333;
   color: white;
   padding: 10%;
+  align-items: flex-end;
 }
 
 select,
@@ -16,4 +17,15 @@ input {
   height: 30px;
   text-align: center;
   font-size: 16px;
+}
+
+.clear-btn {
+  cursor: pointer;
+  background: #676767;
+  color: #d1ffed;
+  padding: 2%;
+}
+
+.clear-btn:active {
+  background: #777777;
 }

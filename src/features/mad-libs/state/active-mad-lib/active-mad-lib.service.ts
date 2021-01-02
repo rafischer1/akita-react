@@ -1,5 +1,5 @@
-import { historyMadLibs } from "../../../../interfaces/history-mad-libs.interface";
 import { activeMadLibStore } from "./active-mad-lib.store";
+import { historyMadLibs } from "../../../../constants/mad-libs.config";
 
 export const setActive = (id: number) => {
   historyMadLibs.forEach((ml) => {

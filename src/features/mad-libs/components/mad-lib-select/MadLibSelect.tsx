@@ -1,11 +1,12 @@
 import React from "react";
-import { historyMadLibs } from "../../../../interfaces/history-mad-libs.interface";
+
 import {
   deleteActive,
   setActive,
 } from "../../state/active-mad-lib/active-mad-lib.service";
 import { resetResponses } from "../../state/mad-lib-responses/mad-lib-response.service";
 import "./MadLibSelect.css";
+import { historyMadLibs } from "../../../../constants/mad-libs.config";
 
 export class MadLibSelect extends React.Component<
   Record<string, never>,

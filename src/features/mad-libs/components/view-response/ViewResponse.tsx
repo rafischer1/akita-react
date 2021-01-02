@@ -2,6 +2,7 @@ import React from "react";
 import { TemplateElement } from "../../../../interfaces/history-mad-libs.interface";
 import "./ViewResponse.css";
 import { getResponseByControlId$ } from "../../state/mad-lib-responses/mad-lib-responses.query";
+import { MadLibResponse } from "../../../../interfaces/mad-lib-response.interface";
 
 export const TextTemplate = (props: { template: TemplateElement }) => {
   return (
@@ -13,13 +14,13 @@ export const TextTemplate = (props: { template: TemplateElement }) => {
 
 export class ControlTemplate extends React.Component<
   { controlId: string | undefined; className: string },
-  { response: string }
+  { response: MadLibResponse }
 > {
   constructor(props: { controlId: string | undefined }) {
     // @ts-ignore
     super(props);
     this.state = {
-      response: "",
+      response: { type: "", controlId: "", value: "" },
     };
   }
   componentDidMount() {
@@ -31,6 +32,19 @@ export class ControlTemplate extends React.Component<
   componentWillUnmount() {}
 
   render() {
-    return <div className={this.props.className}>{this.state.response}</div>;
+    return (
+      <div>
+        {this.state.response.type === "color" ? (
+          <div
+            style={{ background: this.state.response.value }}
+            className="color-div"
+          />
+        ) : (
+          <div className={this.props.className}>
+            {this.state.response.value}
+          </div>
+        )}
+      </div>
+    );
   }
 }
