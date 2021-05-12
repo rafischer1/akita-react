@@ -4,10 +4,10 @@ import "./ViewResponse.css";
 import { getResponseByControlId$ } from "../../state/mad-lib-responses/mad-lib-responses.query";
 import { MadLibResponse } from "../../../../interfaces/mad-lib-response.interface";
 
-export const TextTemplate = (props: { template: TemplateElement }) => {
+export const TextTemplate = (template: TemplateElement) => {
   return (
-    <div className={props.template.className}>
-      {props.template?.text ? props.template.text : ""}
+    <div className={template.className}>
+      {template?.text ? template.text : ""}
     </div>
   );
 };
@@ -23,6 +23,7 @@ export class ControlTemplate extends React.Component<
       response: { type: "", controlId: "", value: "" },
     };
   }
+
   componentDidMount() {
     getResponseByControlId$(this.props.controlId || "0").subscribe((res) =>
       this.setState({ response: res })
