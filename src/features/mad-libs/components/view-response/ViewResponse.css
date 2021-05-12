@@ -1,6 +1,11 @@
 .response {
   font-weight: bolder;
   color: #e8ffe0;
-  border-bottom: 1px solid #a2ffe3;
   padding: 1%;
+}
+
+.color-div {
+  width: 120px;
+  height: 20px;
+  border-radius: 5px;
 }

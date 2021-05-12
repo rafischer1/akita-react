@@ -30,7 +30,11 @@ export class MadLibControls extends React.Component<
   updateResponse(event: any, c: MadLibControl): any {
     if (event) {
       const val = event?.target?.value;
-      updateMadLibResponse({ controlId: c.id, value: val ? val : "" });
+      updateMadLibResponse({
+        controlId: c.id,
+        type: c.type,
+        value: val ? val : "",
+      });
       this.setState({ value: val });
     }
   }
@@ -52,6 +56,25 @@ export class MadLibControls extends React.Component<
                   </select>
                 </label>
               );
+            } else if (c.type === "color") {
+              return (
+                <label key={i}>
+                  {c.label}:
+                  <input
+                    type="color"
+                    onChange={(e) => this.updateResponse(e, c)}
+                    list="presetColors"
+                  />
+                  <datalist id="presetColors">
+                    <option>#40BBC9</option>
+                    <option>#4076C9</option>
+                    <option>#4E40C9</option>
+                    <option>#9340C9</option>
+                    <option>#C940BB</option>
+                    <option>#C94077</option>
+                  </datalist>
+                </label>
+              );
             } else {
               return (
                 <label key={i}>
@@ -65,7 +88,9 @@ export class MadLibControls extends React.Component<
             }
           })}
         </div>
-        <button onClick={this.clearResponses}>Clear Responses</button>
+        <button className="clear-btn" onClick={this.clearResponses}>
+          Clear Responses
+        </button>
       </div>
     );
   }
