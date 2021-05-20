@@ -10,4 +10,4 @@
 
 - BUILD: `yarn build` => `cd build` => `surge` => `akita-react.surge.sh`
 
-- Deployed URL: [http://akita-react.surge.sh/](http://akita-react.surge.sh/)
+- Deployed URL: [WIP!!! http://akita-react.surge.sh/](http://akita-react.surge.sh/)
