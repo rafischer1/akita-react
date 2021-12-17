@@ -27,17 +27,19 @@ export class MadLibSelect extends React.Component<
 
   render() {
     return (
-      <label className={"select-container"}>
-        Select Title:
-        <select onChange={this.handleStateChange}>
-          <option>Select ad-lib...</option>
-          {historyMadLibs.map((madlib, i) => (
-            <option key={i} value={madlib.id}>
-              {madlib.title}
-            </option>
-          ))}
-        </select>
-      </label>
+      <>
+        <label className={"select-container"}>
+          Select Title:
+          <select onChange={this.handleStateChange}>
+            <option>Select ad-lib...</option>
+            {historyMadLibs.map((madlib, i) => (
+              <option key={i} value={madlib.id}>
+                {madlib.title}
+              </option>
+            ))}
+          </select>
+        </label>
+      </>
     );
   }
 }

@@ -5,14 +5,14 @@ import { MadLibContainer } from "./features/mad-libs/mad-lib-container/MadLibCon
 
 function App(): any {
   return (
-    <div>
+    <>
       <Header />
       <div className="App">
         {/*<Form />*/}
         {/*<Hi />*/}
         <MadLibContainer />
       </div>
-    </div>
+    </>
   );
 }
 

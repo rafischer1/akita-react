@@ -25,7 +25,7 @@ export class MadLibTemplate extends React.Component<
 
   render() {
     return (
-      <div>
+      <>
         {this.state?.madLib?.template?.map((el, i) => {
           if (el.text) {
             return <TextTemplate template={el} key={i} />;
@@ -38,7 +38,7 @@ export class MadLibTemplate extends React.Component<
             />
           );
         })}
-      </div>
+      </>
     );
   }
 }
